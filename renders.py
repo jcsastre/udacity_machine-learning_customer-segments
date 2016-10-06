@@ -57,7 +57,7 @@ def cluster_results(reduced_data, preds, centers, pca_samples):
 	# Color the points based on assigned cluster
 	for i, cluster in plot_data.groupby('Cluster'):   
 	    cluster.plot(ax = ax, kind = 'scatter', x = 'Dimension 1', y = 'Dimension 2', \
-	                 color = cmap((i)*1.0/(len(centers)-1)), label = 'Cluster %i'%(i), s=30);
+	                 color = cmap((i)*1/(len(centers)-1)), label = 'Cluster %i'%(i), s=30);
 
 	# Plot centers with indicators
 	for i, c in enumerate(centers):
