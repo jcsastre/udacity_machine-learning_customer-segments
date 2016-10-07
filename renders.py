@@ -52,12 +52,12 @@ def cluster_results(reduced_data, preds, centers, pca_samples):
 	fig, ax = plt.subplots(figsize = (14,8))
 
 	# Color map
-	cmap = cm.get_cmap('gist_rainbow')
+	cmap = cm.get_cmap('rainbow')
 
 	# Color the points based on assigned cluster
 	for i, cluster in plot_data.groupby('Cluster'):   
 	    cluster.plot(ax = ax, kind = 'scatter', x = 'Dimension 1', y = 'Dimension 2', \
-	                 color = cmap((i)*1/(len(centers)-1)), label = 'Cluster %i'%(i), s=30);
+	                 color = cmap((i)*200.0/(len(centers)-1)), label = 'Cluster %i'%(i), s=30);
 
 	# Plot centers with indicators
 	for i, c in enumerate(centers):
